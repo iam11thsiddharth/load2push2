@@ -48,9 +48,11 @@ By integrating with Cloudflare Workers, Load2Push ensures reliability, scalabili
 
 1. **Sign Up for Load2Push**: Visit [Load2Push](https://load2push.netlify.app/) and sign up for an account using your email address.
 
-2. **Enter Baserow API Keys**: Once logged in, navigate to your account settings and enter your Baserow API keys. These keys will be securely stored and used to interact with your Baserow tables.
+2. **Enter Baserow API Keys**: Once logged in, navigate to dashboard and enter your Baserow API keys. These keys will be securely stored and used to interact with your Baserow tables.
 
-3. **Get ID for Your Table**: After entering your API keys, you'll receive an ID for your table. This ID will be used in the URL to specify the table where data should be inserted.
+3. **Enter Baserow Table id ** navigate to dashboard and enter your table id
+
+4. **Get ID for Your account**: After entering your API keys, you'll receive an ID for your account. This ID will be used in the URL to specify the unique table and your account where data should be inserted.
 
 ## Usage
 
