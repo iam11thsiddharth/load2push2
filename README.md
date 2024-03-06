@@ -1,45 +1,64 @@
 # Load2Push
 
-This Cloudflare Worker script interacts with the Baserow API to insert data into a specified table. It does not have the capability to fetch data from Baserow.
+Load2Push is a service that allows users to insert data into a Baserow table using URL parameters. Follow the steps below to get started.
+
+## Prerequisites
+
+1. **Create a Baserow Account**: If you don't already have one, sign up for a [Baserow](https://baserow.io/) account.
+
+2. **Create a Baserow Table**: After logging in, create a new table in Baserow. Add columns to your table corresponding to the data you want to insert. Ensure all column names are in lowercase.
+
+3. **Generate API Keys**: Go to your Baserow account settings and generate API keys. You'll need these keys to authenticate your requests to the Baserow API.
+
+## Getting Started
+
+1. **Sign Up for Load2Push**: Visit [Load2Push](https://load2push.netlify.app/) and sign up for an account using your email address.
+
+2. **Enter Baserow API Keys**: Once logged in, navigate to your account settings and enter your Baserow API keys. These keys will be securely stored and used to interact with your Baserow tables.
+
+3. **Get ID for Your Table**: After entering your API keys, you'll receive an ID for your table. This ID will be used in the URL to specify the table where data should be inserted.
 
 ## Usage
 
-1. **Clone this repository:**
+To insert data into your Baserow table, follow these steps:
 
-    ```bash
-    git clone https://github.com/iam11thsiddharth/load2push.git
-    ```
+1. **Construct the URL**: Use the following format to construct your URL:
 
-2. **Install dependencies (none required for Cloudflare Workers).**
+https://load2push.worker.dev/?id=[YOUR_TABLE_ID]&[COLUMN_NAME_1]=[VALUE_1]&[COLUMN_NAME_2]=[VALUE_2]&...
+
+Replace `[YOUR_TABLE_ID]` with the ID provided after entering your API keys. Replace `[COLUMN_NAME_1]`, `[COLUMN_NAME_2]`, etc., with the names of the columns you created in your Baserow table (all lowercase). Replace `[VALUE_1]`, `[VALUE_2]`, etc., with the values you want to insert into each column.
+
+2. **Load the URL**: Open the constructed URL in your browser or send a request to it programmatically. This will trigger Load2Push to insert the data into your Baserow table.
+
+## Example
+
+Suppose you have a Baserow table with the following columns:
+
+- `name`
+- `class`
+- `age`
+
+And you want to insert the following data:
+
+- name: John
+- class: 2
+- Age: 30
+
+Your constructed URL would look like this:
+
+https://load2push.worker.dev/?id=[YOUR_ID provided in dashboard]&name=John&class=2&age=30
 
 
+## IP Address
 
-4. **Configure the necessary environment variables in the application at [load2push](https://load2push.netlify.app/).:**
+You can use the `ip=yes` parameter in the URL to store the IP address of the user in your Baserow table if a column named `ip` exists.
 
-   - `BASEROW_API_KEY`: Your Baserow API key.
-   - `BASEROW_TABLE_ID`: The ID of the Baserow table where data will be inserted.
-   - `BASEROW_ROW_ID`: The ID of the Baserow row to fetch data from.
+## Notes
 
-5. **Use the Cloudflare Worker URL in your applications to insert data into Baserow.**
+- Ensure that the column names in the URL parameters match exactly with the column names in your Baserow table.
+- Load2Push can only insert data into Baserow tables; it does not have the capability to fetch data from Baserow.
 
-### Features
 
-- Inserts data into a specified table in Baserow using POST requests.
-- Optionally fetches the current user's IP address and sends it to a designated column in the Baserow table if requested.
-
-#### Example Usage
-
-- To insert data into Baserow:
-
-    ```plaintext
-    https://load2push.worker.dev/?id=123&param1=value1&param2=value2
-    ```
-
-- To fetch the current user's IP and insert it into Baserow:
-
-    ```plaintext
-    https://load2push.worker.dev/?id=123&ip=yes&param1=value1&param2=value2
-    ```
 
 **Note:**
 
