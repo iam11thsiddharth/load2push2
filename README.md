@@ -12,9 +12,9 @@ This Cloudflare Worker script interacts with the Baserow API to insert data into
 
 2. **Install dependencies (none required for Cloudflare Workers).**
 
-3. **Deploy the Cloudflare Worker to your Cloudflare account using the [Cloudflare Workers dashboard](https://dash.cloudflare.com/).**
 
-4. **Configure the necessary environment variables:**
+
+4. **Configure the necessary environment variables in the application at [load2push](https://load2push.netlify.app/).:**
 
    - `BASEROW_API_KEY`: Your Baserow API key.
    - `BASEROW_TABLE_ID`: The ID of the Baserow table where data will be inserted.
