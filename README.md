@@ -2,6 +2,40 @@
 
 Load2Push is a service that allows users to insert data into a Baserow table using URL parameters. Follow the steps below to get started.
 
+# Load2Push with Cloudflare Workers
+
+Load2Push is a service that allows users to insert data into a Baserow table using URL parameters. By integrating with Cloudflare Workers, Load2Push gains access to a range of powerful features that enhance performance, security, and scalability.
+
+## Features
+
+1. **Serverless Execution**: Load2Push runs in a serverless environment provided by Cloudflare Workers, eliminating the need to manage server infrastructure and ensuring seamless scalability.
+
+2. **Global Edge Network**: Leveraging Cloudflare's global network of data centers, Load2Push executes closer to users, reducing latency and improving response times worldwide.
+
+3. **Automatic Scaling**: Cloudflare Workers automatically scale to handle fluctuations in traffic, ensuring that Load2Push remains responsive and available regardless of workload.
+
+4. **Edge Cache**: Load2Push can take advantage of Cloudflare's edge caching capabilities to cache frequently accessed data, reducing latency and improving performance.
+
+5. **Security Features**: Cloudflare offers a range of security features, including Web Application Firewall (WAF), Rate Limiting, and Bot Management, to protect Load2Push from various threats.
+
+6. **Traffic Management**: Cloudflare provides advanced traffic management capabilities, allowing Load2Push to intelligently route requests based on geographic location, latency, or specific conditions.
+
+7. **Analytics and Monitoring**: Cloudflare offers robust analytics and monitoring tools that provide insights into traffic patterns, performance metrics, and security threats, helping Load2Push optimize its operation.
+   
+9. Simplified Data Input: With Load2Push, developers can construct URLs with specific parameters that represent the data they want to store in their Baserow table. This means they don't have to build complex data input forms or handle data submission through APIs.
+
+10. Integration with Baserow: Load2Push seamlessly integrates with Baserow, a platform for building online databases and web apps. Developers can authenticate their Baserow account with Load2Push and specify the table where they want the data to be inserted.
+
+11. Efficient Data Handling: By using Load2Push, developers can streamline their data collection process. They can simply share the generated URLs with users or programmatically generate and send requests, eliminating the need for manual data entry.
+    
+12. Error Reduction: Since Load2Push automates the data insertion process, it reduces the likelihood of human error. Developers can ensure that data is accurately and consistently stored in their Baserow table without the risk of typos or missing information.
+    
+13. Time Savings: By automating data input tasks, developers save valuable time that can be allocated to other important aspects of their projects. Load2Push helps developers work more efficiently by simplifying the data collection and storage process.
+
+By integrating with Cloudflare Workers, Load2Push ensures reliability, scalability, and security, enabling developers to focus on building great products without worrying about infrastructure management or scalability challenges.
+
+
+
 ## Prerequisites
 
 1. **Create a Baserow Account**: If you don't already have one, sign up for a [Baserow](https://baserow.io/) account.
@@ -26,7 +60,7 @@ To insert data into your Baserow table, follow these steps:
 
 https://load2push.worker.dev/?id=[YOUR_TABLE_ID]&[COLUMN_NAME_1]=[VALUE_1]&[COLUMN_NAME_2]=[VALUE_2]&...
 
-Replace `[YOUR_TABLE_ID]` with the ID provided after entering your API keys. Replace `[COLUMN_NAME_1]`, `[COLUMN_NAME_2]`, etc., with the names of the columns you created in your Baserow table (all lowercase). Replace `[VALUE_1]`, `[VALUE_2]`, etc., with the values you want to insert into each column.
+Replace `[YOUR_TABLE_ID]` with the ID provided from your dashboard at https://load2push.netlify.app/. Replace `[COLUMN_NAME_1]`, `[COLUMN_NAME_2]`, etc., with the names of the columns you created in your Baserow table (all lowercase). Replace `[VALUE_1]`, `[VALUE_2]`, etc., with the values you want to insert into each column.
 
 2. **Load the URL**: Open the constructed URL in your browser or send a request to it programmatically. This will trigger Load2Push to insert the data into your Baserow table.
 
