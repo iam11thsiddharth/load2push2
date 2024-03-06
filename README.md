@@ -50,7 +50,7 @@ By integrating with Cloudflare Workers, Load2Push ensures reliability, scalabili
 
 2. **Enter Baserow API Keys**: Once logged in, navigate to dashboard and enter your Baserow API keys. These keys will be securely stored and used to interact with your Baserow tables.
 
-3. **Enter Baserow Table id ** navigate to dashboard and enter your table id
+3. **Enter Baserow Table id** navigate to dashboard and enter your table id
 
 4. **Get ID for Your account**: After entering your API keys, you'll receive an ID for your account. This ID will be used in the URL to specify the unique table and your account where data should be inserted.
 
@@ -82,7 +82,7 @@ And you want to insert the following data:
 
 Your constructed URL would look like this:
 
-https://load2push.worker.dev/?id=[YOUR_ID provided in dashboard]&name=John&class=2&age=30
+https://load2push.worker.dev/?id=[YOUR_ID-provided in dashboard]&name=John&class=2&age=30
 
 
 ## IP Address
