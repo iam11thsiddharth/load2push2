@@ -58,9 +58,9 @@ To insert data into your Baserow table, follow these steps:
 
 1. **Construct the URL**: Use the following format to construct your URL:
 
-https://load2push.worker.dev/?id=[YOUR_TABLE_ID]&[COLUMN_NAME_1]=[VALUE_1]&[COLUMN_NAME_2]=[VALUE_2]&...
+https://load2push.worker.dev/?id=[ID]&[COLUMN_NAME_1]=[VALUE_1]&[COLUMN_NAME_2]=[VALUE_2]&...
 
-Replace `[YOUR_TABLE_ID]` with the ID provided from your dashboard at https://load2push.netlify.app/. Replace `[COLUMN_NAME_1]`, `[COLUMN_NAME_2]`, etc., with the names of the columns you created in your Baserow table (all lowercase). Replace `[VALUE_1]`, `[VALUE_2]`, etc., with the values you want to insert into each column.
+Replace `[ID]` with the ID provided from your dashboard at https://load2push.netlify.app/. Replace `[COLUMN_NAME_1]`, `[COLUMN_NAME_2]`, etc., with the names of the columns you created in your Baserow table (all lowercase). Replace `[VALUE_1]`, `[VALUE_2]`, etc., with the values you want to insert into each column.
 
 2. **Load the URL**: Open the constructed URL in your browser or send a request to it programmatically. This will trigger Load2Push to insert the data into your Baserow table.
 
