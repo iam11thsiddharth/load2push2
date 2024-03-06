@@ -60,7 +60,7 @@ To insert data into your Baserow table, follow these steps:
 
 1. **Construct the URL**: Use the following format to construct your URL:
 
-https://load2push.worker.dev/?id=[ID]&[COLUMN_NAME_1]=[VALUE_1]&[COLUMN_NAME_2]=[VALUE_2]&...
+https://go.load2push.workers.dev/?id=[ID]&[COLUMN_NAME_1]=[VALUE_1]&[COLUMN_NAME_2]=[VALUE_2]&...
 
 Replace `[ID]` with the ID provided from your dashboard at https://load2push.netlify.app/. Replace `[COLUMN_NAME_1]`, `[COLUMN_NAME_2]`, etc., with the names of the columns you created in your Baserow table (all lowercase). Replace `[VALUE_1]`, `[VALUE_2]`, etc., with the values you want to insert into each column.
 
@@ -82,7 +82,7 @@ And you want to insert the following data:
 
 Your constructed URL would look like this:
 
-https://load2push.worker.dev/?id=[YOUR_ID-provided in dashboard]&name=John&class=2&age=30
+https://go.load2push.workers.dev/?id=[YOUR_ID-provided in dashboard]&name=John&class=2&age=30
 
 
 ## IP Address
@@ -103,7 +103,7 @@ You can use the `ip=yes` parameter in the URL to store the IP address of the use
 - Parameter names must be exactly the same as your Baserow table's column names.
 - Avoid using capital alphabets in your database table/column/row or parameters and others.
 
-**Cloudflare worker code deployed at load2push.worker.dev :**
+**Cloudflare worker code deployed at go.load2push.workers.dev :**
   
   
   ```javascript
