@@ -1,75 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Load2Push</title>
-</head>
-<body>
-    <h1>Load2Push</h1>
+# Load2Push
 
-    <p>This Cloudflare Worker script interacts with the Baserow API to fetch row data from a specified table and insert data into another table. It also includes a feature to fetch the current user's IP address and send it to a designated column in the Baserow table.</p>
+This Cloudflare Worker script interacts with the Baserow API to insert data into a specified table. It does not have the capability to fetch data from Baserow.
 
-    <h2>Usage</h2>
+## Usage
 
-    <ol>
-        <li>Clone this repository:</li>
-    </ol>
+1. **Clone this repository:**
 
-    <pre><code>git clone https://github.com/iam11thsiddharth/load2push.git</code></pre>
+    ```bash
+    git clone https://github.com/iam11thsiddharth/load2push.git
+    ```
 
-    <ol start="2">
-        <li>Install dependencies (none required for Cloudflare Workers).</li>
-        <li>Deploy the Cloudflare Worker to your Cloudflare account using the <a href="https://dash.cloudflare.com/">Cloudflare Workers dashboard</a>.</li>
-        <li>Configure the necessary environment variables:</li>
-    </ol>
+2. **Install dependencies (none required for Cloudflare Workers).**
 
-    <ul>
-        <li><code>BASEROW_API_KEY</code>: Your Baserow API key.</li>
-        <li><code>BASEROW_TABLE_ID</code>: The ID of the Baserow table where data will be inserted.</li>
-        <li>(Optional) <code>BASEROW_ROW_ID</code>: The ID of the Baserow row to fetch data from.</li>
-    </ul>
+3. **Deploy the Cloudflare Worker to your Cloudflare account using the [Cloudflare Workers dashboard](https://dash.cloudflare.com/).**
 
-    <ol start="5">
-        <li>Use the Cloudflare Worker URL in your applications to fetch and insert data from/to Baserow.</li>
-    </ol>
+4. **Configure the necessary environment variables:**
 
-    <h3>Features</h3>
+   - `BASEROW_API_KEY`: Your Baserow API key.
+   - `BASEROW_TABLE_ID`: The ID of the Baserow table where data will be inserted.
+   - `BASEROW_ROW_ID`: The ID of the Baserow row to fetch data from.
 
-    <ul>
-        <li>Fetches full row data from Baserow using the provided row ID.</li>
-        <li>Inserts data into a specified table in Baserow using POST requests.</li>
-        <li>Optionally fetches the current user's IP address and sends it to a designated column in the Baserow table if requested.</li>
-    </ul>
+5. **Use the Cloudflare Worker URL in your applications to insert data into Baserow.**
 
-    <h4>Example Usage</h4>
+### Features
 
-    <p>To fetch row data from Baserow:</p>
+- Inserts data into a specified table in Baserow using POST requests.
+- Optionally fetches the current user's IP address and sends it to a designated column in the Baserow table if requested.
 
-    <pre><code>https://your-worker-url.example.com?id=123</code></pre>
+#### Example Usage
 
-    <p>To insert data into Baserow:</p>
+- To insert data into Baserow:
 
-    <pre><code>https://your-worker-url.example.com?id=123&amp;param1=value1&amp;param2=value2</code></pre>
+    ```plaintext
+    https://load2push.worker.dev/?id=123&param1=value1&param2=value2
+    ```
 
-    <p>To fetch the current user's IP and insert it into Baserow:</p>
+- To fetch the current user's IP and insert it into Baserow:
 
-    <pre><code>https://your-worker-url.example.com?id=123&amp;ip=yes&amp;param1=value1&amp;param2=value2</code></pre>
+    ```plaintext
+    https://load2push.worker.dev/?id=123&ip=yes&param1=value1&param2=value2
+    ```
 
-    <p><strong>Note:</strong></p>
+**Note:**
 
-    <ul>
-        <li>You can use <code>ip=yes</code> parameter to store the IP address of the user in your table (a column named - <code>ip</code> must exist).</li>
-        <li>Parameter names must be exactly the same as your Baserow table's column names.</li>
-        <li>Avoid using capital alphabets in your database table/column/row or parameters and others.</li>
-    </ul>
+- This Cloudflare Worker script can only insert data into a Baserow table. It does not have the capability to fetch data from Baserow.
+- You can use `ip=yes` parameter to store the IP address of the user in your table (a column named - `ip` must exist).
+- Parameter names must be exactly the same as your Baserow table's column names.
+- Avoid using capital alphabets in your database table/column/row or parameters and others.
 
-    <h5>Credits</h5>
+##### Credits
 
-    <p>This Cloudflare Worker script was developed by <a href="https://github.com/iam11thsiddharth">Siddharth</a>.</p>
+This Cloudflare Worker script was developed by [Siddharth](https://github.com/iam11thsiddharth).
 
-    <h6>License</h6>
 
-    <p>This project is licensed under the MIT License - see the <a href="LICENSE">LICENSE</a> file for details.</p>
-</body>
-</html>
